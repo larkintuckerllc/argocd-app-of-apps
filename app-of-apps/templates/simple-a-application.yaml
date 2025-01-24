@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: simple-a
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: default
