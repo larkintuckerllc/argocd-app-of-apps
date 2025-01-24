@@ -12,3 +12,6 @@ spec:
     path: simple-b
     repoURL: https://github.com/larkintuckerllc/argocd-app-of-apps
     targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+  
