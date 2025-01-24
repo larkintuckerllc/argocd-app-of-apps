@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-a
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: simple-a
+    repoURL: https://github.com/larkintuckerllc/argocd-app-of-apps
+    targetRevision: HEAD
