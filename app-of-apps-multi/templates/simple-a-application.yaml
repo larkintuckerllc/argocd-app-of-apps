@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.name }}-simple-a
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: {{ .Values.name }}
+    namespace: default
+  project: default
+  source:
+    path: simple-a
+    repoURL: https://github.com/larkintuckerllc/argocd-app-of-apps
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+  

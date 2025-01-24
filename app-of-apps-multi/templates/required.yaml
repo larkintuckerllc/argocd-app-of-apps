@@ -1,0 +1,1 @@
+{{- $_ := required "name is a required value" .Values.name}}
